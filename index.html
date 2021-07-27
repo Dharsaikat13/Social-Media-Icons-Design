@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Icon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section class="socialmedia">
+        <ul class="sci">
+            <li data-text="Facebook" data-color="#1877f2">
+                <a href="#" class="facebook ti"><i class="fab fa-facebook"></i></a>
+            </li>
+
+            <li data-text="Youtube" data-color="#ff0000">
+                <a href="#" class="youtube ti">
+                    <i class="fab fa-youtube"></i> 
+                </a>
+            </li>
+
+            <li data-text="Twitter" data-color="#0099ff">
+                <a href="#" class="twitter ti">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+
+            <li data-text="Instagram" data-color="#fc71bd">
+                <a href="#" class="instagram ti">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <script src="vanilla-tilt.min.js">
+
+    </script>
+    
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".ti"), {
+		max: 40,
+		speed: 400,
+        glare:true,
+        "max-glare":1,
+
+	});
+
+
+        let list = document.querySelectorAll('.sci li');
+        let bg = document.querySelector('.socialmedia');
+        list.forEach(elements=>{
+            elements.addEventListener('mouseenter',function(event){
+            let color = event.target.getAttribute('data-color');
+            bg.style.backgroundColor = color;
+            })
+            elements.addEventListener('mouseleave',function(event){
+            bg.style.backgroundColor = '#fff';
+            })
+
+
+        })
+    </script>
+</body>
+</html>
